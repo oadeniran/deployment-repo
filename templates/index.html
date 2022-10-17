@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <!--From Hamoye Anaconda team castpone Project-->
+    <head>
+        <title> Predicting win or loss of your legal case</title>
+        <style>
+        </style>
+    </head>
+
+    <body>
+        <h1>PREDICTING WIN OR LOSS OF YOUR LEGAL CASE</h1> 
+        <br>
+        <form action="{{ url_for('prediction') }}" method = "post">
+            <label for = "facts">Deatails of the case</label>
+            <input height= 50px size = 50 type = "text" id = "facts" name = "facts" required = "required">
+            <br>
+            <br>
+            <label for = "issue_area">Issue Are for Case</label>
+            <select id = "issue_area" name = "issue_area" required = "required">
+                <option value = 0>Attorneys</option>
+                <option value = 1>Civil Rights</option>
+                <option value = 2>Criminal Procedue</option>
+                <option value = 3>Due Process</option>
+                <option value = 4>Economic Activity</option>
+                <option value = 5>Federal Taxation</option>
+                <option value = 6>Federalism</option>
+                <option value = 7>First Amendment</option>
+                <option value = 8>Interstate Relations</option>
+                <option value = 9>Judicial Power</option>
+                <option value = 10>Miscellaneous</option>
+                <option value = 11>Privacy</option>
+                <option value = 12>Private Actions</option>
+                <option value = 13>Unions</option>
+            </select>
+            <br>
+            <br>
+            <input type = "submit" value = "Submit">
+        </form>
+
+        {% if prediction %}
+            <p> YOU HAVE A HIGH CHANCE TO {{ prediction }} THE CASE </p>
+        {% endif %}
+
+    </body>
+    <br>
+    <br>
+    <div style = "position : relative;">
+        <a href="{{ url_for('help') }}">Help</a>
+        <div style="position: absolute; bottom: 10;">
+            2022 (c) Team Anaconda
+        </div>
+    </div>
+
+</html>
