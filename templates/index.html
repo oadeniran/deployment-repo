@@ -13,7 +13,8 @@
         <br>
         <form action="{{ url_for('prediction') }}" method = "post">
             <label for = "facts">Deatails of the case</label>
-            <input height= 50px size = 50 type = "text" id = "facts" name = "facts" required = "required">
+            <br>
+            <textarea rows="10" cols="50"  id = "facts" name = "facts" required = "required"></textarea>
             <br>
             <br>
             <label for = "issue_area">Issue Are for Case</label>
