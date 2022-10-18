@@ -55,6 +55,7 @@ def index():
 @app.route('/prediction', methods = ['POST'])
 def prediction():
     feature_list = request.form.to_dict()
+    print(feature_list)
     feature_list['issue_area'] = int(feature_list['issue_area'])
     final = pd.DataFrame(feature_list, index = [1])
     final['facts'] = final.apply(remove_stopwords, axis = 1)
@@ -75,4 +76,4 @@ def help():
     
 
 if __name__ == "__main__":
-    app.run(debug = False)
+    app.run(debug = True)
