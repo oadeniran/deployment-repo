@@ -42,9 +42,9 @@ app = Flask(__name__)
 app.secret_key = 'team-anaconda'
 
 model = xgboost.XGBClassifier()
-model.load_model('model.bin')
+model.load_model('Smodel.bin')
 
-with open('bow_cv.pk', 'rb') as f:
+with open('Sbow_cv.pk', 'rb') as f:
     cv = pickle.load(f)
 
 @app.route('/', methods = ['GET', 'POST'])
